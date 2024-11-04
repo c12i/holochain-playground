@@ -1,11 +1,10 @@
 import {
 	SimulatedHappBundle,
 	createConductors,
-	demoHapp,
+	demoHapp, //@ts-ignore
 } from '@holochain-playground/simulator';
 import { customElement, property } from 'lit/decorators.js';
 
-import { PlaygroundMode } from '../store/mode.js';
 import { SimulatedPlaygroundStore } from '../store/simulated-playground-store.js';
 import { BasePlaygroundContext } from './base-playground-context.js';
 

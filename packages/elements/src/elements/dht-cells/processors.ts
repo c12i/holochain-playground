@@ -4,7 +4,8 @@ import {
 	HoloHashMap,
 	hash,
 } from '@holochain-open-dev/utils';
-import { BadAgent, Cell, location } from '@holochain-playground/simulator';
+//@ts-ignore
+import { BadAgent, location } from '@holochain-playground/simulator';
 import {
 	ActionHash,
 	AgentPubKey,

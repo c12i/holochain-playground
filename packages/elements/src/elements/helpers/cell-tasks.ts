@@ -6,7 +6,7 @@ import {
 	Workflow,
 	WorkflowType,
 	sleep,
-	workflowPriority,
+	workflowPriority, //@ts-ignore
 } from '@holochain-playground/simulator';
 import {
 	mdiAlertOutline,

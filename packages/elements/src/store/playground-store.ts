@@ -27,7 +27,6 @@ import {
 import isEqual from 'lodash-es/isEqual.js';
 
 import { ConnectedConductorStore } from './connected-playground-store.js';
-import { PlaygroundMode } from './mode.js';
 import { SimulatedConductorStore } from './simulated-playground-store.js';
 import { joinAsyncCellMap, mapCellValues } from './utils.js';
 

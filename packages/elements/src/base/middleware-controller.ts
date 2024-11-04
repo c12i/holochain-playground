@@ -4,7 +4,7 @@ import {
 	ErrorMiddleware,
 	Middleware,
 	MiddlewareSubscription,
-	SuccessMiddleware,
+	SuccessMiddleware, //@ts-ignore
 } from '@holochain-playground/simulator';
 import { CellId } from '@holochain/client';
 import { ReactiveController, ReactiveElement } from 'lit';
@@ -61,16 +61,19 @@ export class MiddlewareController implements ReactiveController {
 				const s = cell!.workflowExecutor.before(
 					this.middlewares.workflow.before,
 				);
+				//@ts-ignore
 				subscriptions.push(s);
 			}
 			if (this.middlewares.workflow?.success) {
 				const s = cell!.workflowExecutor.success(
 					this.middlewares.workflow.success,
 				);
+				//@ts-ignore
 				subscriptions.push(s);
 			}
 			if (this.middlewares.workflow?.error) {
 				const s = cell!.workflowExecutor.error(this.middlewares.workflow.error);
+				//@ts-ignore
 				subscriptions.push(s);
 			}
 
@@ -78,18 +81,21 @@ export class MiddlewareController implements ReactiveController {
 				const s = cell!.p2p.networkRequestsExecutor.before(
 					this.middlewares.networkRequests.before,
 				);
+				//@ts-ignore
 				subscriptions.push(s);
 			}
 			if (this.middlewares.networkRequests?.success) {
 				const s = cell!.p2p.networkRequestsExecutor.success(
 					this.middlewares.networkRequests.success,
 				);
+				//@ts-ignore
 				subscriptions.push(s);
 			}
 			if (this.middlewares.networkRequests?.error) {
 				const s = cell!.p2p.networkRequestsExecutor.error(
 					this.middlewares.networkRequests.error,
 				);
+				//@ts-ignore
 				subscriptions.push(s);
 			}
 

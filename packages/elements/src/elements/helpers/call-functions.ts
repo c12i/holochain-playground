@@ -1,3 +1,4 @@
+//@ts-ignore
 import { Dictionary } from '@holochain-playground/simulator';
 import '@shoelace-style/shoelace/dist/components/button/button.js';
 import '@shoelace-style/shoelace/dist/components/drawer/drawer.js';

@@ -3,7 +3,7 @@ import {
 	Cell,
 	Conductor,
 	isHoldingEntry,
-	isHoldingRecord,
+	isHoldingRecord, //@ts-ignore
 } from '@holochain-playground/simulator';
 import {
 	ActionHash,
@@ -89,6 +89,7 @@ export function selectMedianHoldingDHTOps(cells: Cell[]): number {
 	const holdingDHTOps = [];
 
 	for (const cell of cells) {
+		//@ts-ignore
 		holdingDHTOps.push(Object.keys(cell._state.integratedDHTOps).length);
 	}
 

@@ -2,8 +2,13 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "dist"
+    "outDir": "dist",
+    "noImplicitAny": false,
   },
-  "include": ["src"],
-  "exclude": ["node_modules/!(@open-wc)"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules/!(@open-wc)"
+  ]
 }

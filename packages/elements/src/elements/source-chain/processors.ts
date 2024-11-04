@@ -1,13 +1,12 @@
 import {
 	extractEntry,
-	getEntryTypeString,
+	getEntryTypeString, //@ts-ignore
 } from '@holochain-playground/simulator';
 import {
 	Create,
 	Entry,
 	NewEntryAction,
 	Record,
-	RecordEntry,
 	SignedActionHashed,
 	encodeHashToBase64,
 } from '@holochain/client';
@@ -23,6 +22,7 @@ export function sourceChainNodes(cellStore: CellStore, records: Record[]) {
 		const action: SignedActionHashed = record.signed_action;
 		const actionHash = encodeHashToBase64(action.hashed.hash);
 
+		//@ts-ignore
 		nodes.push({
 			data: {
 				id: actionHash,
@@ -36,6 +36,7 @@ export function sourceChainNodes(cellStore: CellStore, records: Record[]) {
 			const previousActionHash = encodeHashToBase64(
 				(action.hashed.content as Create).prev_action,
 			);
+			//@ts-ignore
 			nodes.push({
 				data: {
 					id: `${actionHash}->${previousActionHash}`,
@@ -78,6 +79,7 @@ export function sourceChainNodes(cellStore: CellStore, records: Record[]) {
 				};
 			}
 
+			//@ts-ignore
 			nodes.push({
 				data: {
 					id: entryNodeId,
@@ -86,6 +88,7 @@ export function sourceChainNodes(cellStore: CellStore, records: Record[]) {
 				},
 				classes: [entryType, 'entry'],
 			});
+			//@ts-ignore
 			nodes.push({
 				data: {
 					id: `${actionHash}->${entryNodeId}`,

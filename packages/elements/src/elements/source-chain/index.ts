@@ -49,6 +49,7 @@ export class SourceChain extends PlaygroundElement {
 			const entry_hash = (action.content as NewEntryAction).entry_hash;
 			if (entry_hash !== undefined && isEqual(entry_hash, activeHash)) {
 				nodesIds.push(
+					//@ts-ignore
 					`${encodeHashToBase64(action.hash)}:${encodeHashToBase64(
 						entry_hash,
 					)}`,

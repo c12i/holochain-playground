@@ -6,28 +6,23 @@ import {
 } from '@holochain-open-dev/signals';
 import { CellMap } from '@holochain-open-dev/utils';
 import {
-	AppRole,
 	BadAgent,
 	Cell,
 	Conductor,
 	ConductorSignalType,
 	Dictionary,
-	InstalledHapps,
 	SimulatedHappBundle,
 	createConductors,
 	selectDhtShard,
 	selectSourceChain,
-	simulatedRolesToCellInfo,
+	simulatedRolesToCellInfo, //@ts-ignore
 } from '@holochain-playground/simulator';
 import {
 	AgentPubKey,
 	AnyDhtHash,
 	AppInfo,
 	CellId,
-	CellInfo,
-	CellType,
 	DhtOp,
-	DnaModifiers,
 	Record,
 } from '@holochain/client';
 import { encode } from '@msgpack/msgpack';
@@ -136,7 +131,7 @@ export class SimulatedConductorStore
 
 		this.happs = pollingSignal(async apps => {
 			return Object.values(this.conductor.installedHapps).map(
-				h =>
+				(h: any) =>
 					({
 						agent_pub_key: h.agent_pub_key,
 						installed_app_id: h.app_id,

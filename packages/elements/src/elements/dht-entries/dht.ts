@@ -1,12 +1,11 @@
 import { CellMap, HoloHashMap, hashAction } from '@holochain-open-dev/utils';
 import {
 	SimulatedDna,
-	getEntryTypeString,
+	getEntryTypeString, //@ts-ignore
 } from '@holochain-playground/simulator';
 import {
 	Action,
 	ActionHash,
-	ActionType,
 	AnyDhtHash,
 	AppEntryDef,
 	CreateLink,

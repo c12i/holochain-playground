@@ -4,12 +4,11 @@ import {
 	sharedStyles,
 } from '@holochain-playground/elements';
 import '@holochain-playground/elements';
-import { mdiMenu } from '@mdi/js';
 import { SlDrawer } from '@shoelace-style/shoelace';
 import '@shoelace-style/shoelace/dist/components/drawer/drawer.js';
 import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
 import '@shoelace-style/shoelace/dist/components/spinner/spinner.js';
-import { DockviewApi, SerializedDockview } from 'dockview-core';
+import { DockviewApi } from 'dockview-core';
 import { LitElement, css, html } from 'lit';
 import { customElement, query, state } from 'lit/decorators.js';
 import { Socket, io } from 'socket.io-client';

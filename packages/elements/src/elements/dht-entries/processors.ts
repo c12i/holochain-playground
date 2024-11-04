@@ -5,6 +5,7 @@ import {
 	getHashType,
 	retype,
 } from '@holochain-open-dev/utils';
+//@ts-ignore
 import { SimulatedDna, getAppEntryType } from '@holochain-playground/simulator';
 import {
 	Action,

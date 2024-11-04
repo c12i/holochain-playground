@@ -1,7 +1,7 @@
 import { notifyError } from '@holochain-open-dev/elements';
 import {
 	Dictionary,
-	SimulatedHappBundle,
+	SimulatedHappBundle, //@ts-ignore
 } from '@holochain-playground/simulator';
 import { html } from 'lit';
 
@@ -68,6 +68,7 @@ export function adminApi(
 
 						return html` <div class="column">
 							<span>Membrane Proofs</span>${Object.entries(happ.roles)
+								//@ts-ignore
 								.filter(([_, dna]) => !dna.deferred)
 								.map(
 									([cellRole, dna]) =>

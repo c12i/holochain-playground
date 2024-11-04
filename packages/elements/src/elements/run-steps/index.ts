@@ -51,6 +51,7 @@ export class RunSteps extends PlaygroundElement<SimulatedPlaygroundStore> {
 			const checkConsistency = (consistencyCheckCount = 0) => {
 				for (const cell of cells) {
 					for (const triggers of Object.values(cell._triggers)) {
+						//@ts-ignore
 						if (triggers.running || triggers.triggered) return;
 					}
 				}

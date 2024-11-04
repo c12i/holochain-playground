@@ -2,9 +2,8 @@ import { wrapPathInSvg } from '@holochain-open-dev/elements';
 import '@holochain-open-dev/elements/dist/elements/holo-identicon.js';
 import { CellMap, isHash } from '@holochain-open-dev/utils';
 import {
-	Cell,
 	SimulatedDna,
-	SimulatedZome,
+	SimulatedZome, //@ts-ignore
 } from '@holochain-playground/simulator';
 import { decodeHashFromBase64, encodeHashToBase64 } from '@holochain/client';
 import { mdiAlertOutline, mdiCheckCircleOutline } from '@mdi/js';
@@ -22,11 +21,10 @@ import { cloneDeepWith } from 'lodash-es';
 
 import { PlaygroundElement } from '../../base/playground-element.js';
 import {
-	SimulatedCellStore,
 	SimulatedConductorStore,
 	SimulatedPlaygroundStore,
 } from '../../store/simulated-playground-store.js';
-import { CallFns, CallableFn } from '../helpers/call-functions.js';
+import { CallableFn } from '../helpers/call-functions.js';
 import '../helpers/call-functions.js';
 import '../helpers/expandable-line.js';
 import { shortenStrRec } from '../utils/hash.js';
@@ -146,6 +144,7 @@ export class CallZomeFns extends PlaygroundElement<SimulatedPlaygroundStore> {
 
 		const fns: Array<CallableFn> = zomeFns.map(zomeFn => ({
 			name: zomeFn[0],
+			//@ts-ignore
 			args: zomeFn[1].arguments.map(arg => ({ ...arg, field: 'textfield' })),
 			call: args => this.callZomeFunction(zome, zomeFn[0], args),
 		}));

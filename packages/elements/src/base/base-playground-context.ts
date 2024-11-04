@@ -1,10 +1,8 @@
 import { provide } from '@lit/context';
-import { LitElement, css, html } from 'lit';
-import { property, query } from 'lit/decorators.js';
+import { LitElement, css } from 'lit';
 
 import { sharedStyles } from '../elements/utils/shared-styles.js';
 import { ConnectedPlaygroundStore } from '../store/connected-playground-store.js';
-import { PlaygroundStore } from '../store/playground-store.js';
 import { SimulatedPlaygroundStore } from '../store/simulated-playground-store.js';
 import { playgroundContext } from './context.js';
 

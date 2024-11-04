@@ -8,7 +8,7 @@ import {
 	NetworkRequestType,
 	PublishRequestInfo,
 	WorkflowType,
-	sleep,
+	sleep, //@ts-ignore
 } from '@holochain-playground/simulator';
 import {
 	AgentPubKey,
@@ -348,6 +348,7 @@ export class DhtCells extends PlaygroundElement {
 			recognizedBadActors.status === 'completed'
 		) {
 			if (this.store instanceof SimulatedPlaygroundStore) {
+				//@ts-ignore
 				edges = simulatedNeighbors(
 					cellsForActiveDna.value,
 					peers.value,
@@ -355,6 +356,7 @@ export class DhtCells extends PlaygroundElement {
 					recognizedBadActors.value,
 				);
 			} else {
+				//@ts-ignore
 				edges = allPeersEdges(cellsForActiveDna.value, peers.value);
 			}
 		}
